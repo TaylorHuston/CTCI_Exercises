@@ -1,4 +1,4 @@
-package commonAlgorithms;
+package BigO;
 
 /*Calculates all the permutations of a string. O(N!) */
 public class StringPerumtation {

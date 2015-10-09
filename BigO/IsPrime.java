@@ -1,4 +1,4 @@
-package commonAlgorithms;
+package BigO;
 
 /*Evaluates whether a number is prime. O(sqrt(n))*/
 public class IsPrime {

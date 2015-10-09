@@ -1,4 +1,4 @@
-package commonAlgorithms;
+package BigO;
 
 
 public class Fibonacci {
@@ -38,7 +38,7 @@ public class Fibonacci {
         int result = Fibonacci.computeNth(n);
         System.out.println("The " + n + "th Fibonaci number is " + result);
         System.out.println("The first " + n + " Fibonaci numbers are:");
-        Fibonacci.computeAll(n+1);
+        Fibonacci.computeAll(n + 1);
     }
 
 }

@@ -1,4 +1,4 @@
-package commonAlgorithms;
+package BigO;
 
 /*Reverse an array. O(N)*/
 public class ReverseArray {
