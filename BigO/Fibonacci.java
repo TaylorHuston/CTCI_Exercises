@@ -15,9 +15,9 @@ public class Fibonacci {
 
     /*Computer all of the fib#'s up to n, caches already found choices. O(N)*/
     public static void computeAll(int n) {
-        int[] memo = new int[n+1];
-        for(int i = 0; i < n; i++) {
-            System.out.println(i+ ": " +fib(i, memo));
+        int[] memo = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            System.out.println(i + ": " + fib(i, memo));
         }
     }
 
@@ -29,7 +29,7 @@ public class Fibonacci {
         } else if (memo[n] > 0) {
             return memo[n];
         }
-        memo[n] = fib(n -1, memo) + fib(n-2, memo);
+        memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
         return memo[n];
     }
 

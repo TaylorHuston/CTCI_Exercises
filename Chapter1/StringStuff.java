@@ -52,7 +52,7 @@ public class StringStuff {
         for (int i = 0; i < t.length(); i++) {
             int val = (int) t.charAt(i);
             letters[val]--;
-            if(letters[val] < 0) {
+            if (letters[val] < 0) {
                 return false;
             }
         }
@@ -74,16 +74,16 @@ public class StringStuff {
             }
         }
 
-        char[] toReturn = new char[newLength+1];
+        char[] toReturn = new char[newLength + 1];
         toReturn[newLength] = '\0';
-        for (int i = length-1; i >=0; i--) {
+        for (int i = length - 1; i >= 0; i--) {
             if (strArray[i] == ' ') {
-                toReturn[newLength-1] = '0';
-                toReturn[newLength-2] = '2';
-                toReturn[newLength-3] = '%';
+                toReturn[newLength - 1] = '0';
+                toReturn[newLength - 2] = '2';
+                toReturn[newLength - 3] = '%';
                 newLength -= 3;
             } else {
-                toReturn[newLength-1] = strArray[i];
+                toReturn[newLength - 1] = strArray[i];
                 newLength--;
             }
         }
@@ -101,9 +101,9 @@ public class StringStuff {
             if (c == ' ') {
                 continue;
             } else {
-                int x = ((int) c)%26;
+                int x = ((int) c) % 26;
                 numChars[x]++;
-                if(numChars[x] % 2 == 1) {
+                if (numChars[x] % 2 == 1) {
                     countOdd++;
                 } else {
                     countOdd--;
@@ -119,9 +119,9 @@ public class StringStuff {
         if (s.length() == t.length()) {
             return oneEditReplace(s, t);
         } else if (s.length() + 1 == t.length()) {
-            return oneEditInsert(s,t);
+            return oneEditInsert(s, t);
         } else if (t.length() + 1 == s.length()) {
-            return oneEditInsert(t,s);
+            return oneEditInsert(t, s);
         }
         return false;
     }
@@ -161,7 +161,7 @@ public class StringStuff {
         int consecutive = 1;
 
         for (int i = 0; i < s.length(); i++) {
-            if ((i+1) == s.length() || s.charAt(i) != s.charAt(i+1)) {
+            if ((i + 1) == s.length() || s.charAt(i) != s.charAt(i + 1)) {
                 compressed.append(s.charAt(i));
                 compressed.append(consecutive);
                 consecutive = 1;
@@ -172,8 +172,6 @@ public class StringStuff {
 
         return compressed.toString();
     }
-
-
 
 
     public static void main(String[] args) {

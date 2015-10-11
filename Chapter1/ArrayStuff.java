@@ -5,13 +5,13 @@ public class ArrayStuff {
 
     //Rotate all of the clauses in an NxN matrix 90 degrees
     public static void rotateMatrix(int[][] M, int N) {
-        for (int layer = 0; layer < N/2; layer++) {
-            for (int offset = 0; offset < N-2; offset++) {
-                int save =  M[offset][layer];
-                M[offset][layer] = M[layer][N-1-offset];
-                M[layer][N-1-offset] = M[N-1-offset][N-1-layer];
-                M[N-1-offset][N-1-layer] = M[N-1-layer][offset];
-                M[N-1-layer][offset] = save;
+        for (int layer = 0; layer < N / 2; layer++) {
+            for (int offset = 0; offset < N - 2; offset++) {
+                int save = M[offset][layer];
+                M[offset][layer] = M[layer][N - 1 - offset];
+                M[layer][N - 1 - offset] = M[N - 1 - offset][N - 1 - layer];
+                M[N - 1 - offset][N - 1 - layer] = M[N - 1 - layer][offset];
+                M[N - 1 - layer][offset] = save;
             }
         }
 
@@ -22,7 +22,7 @@ public class ArrayStuff {
         boolean[] col = new boolean[N];
 
         for (int y = 0; y < N; y++) {
-            for (int x = 0; x < N; x++){
+            for (int x = 0; x < N; x++) {
                 if (M[x][y] == 0) {
                     row[y] = true;
                     col[x] = true;
@@ -47,7 +47,7 @@ public class ArrayStuff {
         }
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         int[][] matrix = new int[4][4];
         int count = 1;
         for (int y = 0; y < 4; y++) {
@@ -58,7 +58,7 @@ public class ArrayStuff {
 
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 4; x++) {
-                System.out.print(matrix[x][y]+ " ");
+                System.out.print(matrix[x][y] + " ");
             }
             System.out.println();
         }
@@ -69,7 +69,7 @@ public class ArrayStuff {
 
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 4; x++) {
-                System.out.print(matrix[x][y]+ " ");
+                System.out.print(matrix[x][y] + " ");
             }
             System.out.println();
         }
@@ -81,7 +81,7 @@ public class ArrayStuff {
 
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 4; x++) {
-                System.out.print(matrix[x][y]+ " ");
+                System.out.print(matrix[x][y] + " ");
             }
             System.out.println();
         }
@@ -92,7 +92,7 @@ public class ArrayStuff {
 
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 4; x++) {
-                System.out.print(matrix[x][y]+ " ");
+                System.out.print(matrix[x][y] + " ");
             }
             System.out.println();
         }
