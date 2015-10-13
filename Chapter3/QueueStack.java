@@ -10,7 +10,7 @@ public class QueueStack<T> {
         oldest = new Stack<T>();
     }
 
-    public void enqeue(T toAdd) {
+    public void enqueue(T toAdd) {
         newest.push(toAdd);
     }
 
@@ -30,6 +30,20 @@ public class QueueStack<T> {
     public T dequeue() {
         shift();
         return oldest.pop();
+    }
+
+    public static void main (String[] args) {
+        QueueStack<Integer> test = new QueueStack<>();
+
+        test.enqueue(1);
+        test.enqueue(2);
+        test.enqueue(3);
+        System.out.println(test.dequeue());
+        test.enqueue(4);
+        System.out.println(test.dequeue());
+        System.out.println(test.dequeue());
+        System.out.println(test.dequeue());
+
     }
 
 }
