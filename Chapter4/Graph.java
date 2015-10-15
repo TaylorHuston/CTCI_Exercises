@@ -44,6 +44,21 @@ public class Graph {
         return false;
     }
 
+    public boolean hasPathToDFS(int v, int y) {
+        boolean[] visited = new boolean[size];
+        DFS(v, visited);
+        return visited[y];
+    }
+
+    private void DFS(int v, boolean[] visited) {
+        visited[v] = true;
+        for (Integer x: nodes[v]) {
+            if (visited[x] == false) {
+                DFS(x, visited);
+            }
+        }
+    }
+
     public static void main (String[] args) {
         Graph G = new Graph(10);
         G.addEdge(1, 2);
@@ -56,6 +71,11 @@ public class Graph {
         System.out.println(G.hasPathToBFS(1, 5));
         System.out.println(G.hasPathToBFS(1, 9));
         System.out.println(G.hasPathToBFS(0, 9));
+        System.out.println();
+        System.out.println(G.hasPathToDFS(1, 3));
+        System.out.println(G.hasPathToDFS(1, 5));
+        System.out.println(G.hasPathToDFS(1, 9));
+        System.out.println(G.hasPathToDFS(0, 9));
     }
 
 }
