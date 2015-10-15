@@ -5,6 +5,7 @@ import Chapter3.Queue;
 
 import java.util.ArrayList;
 
+/*Graph with BFS and DFS search methods*/
 public class Graph {
 
     ArrayList<Integer>[] nodes;
