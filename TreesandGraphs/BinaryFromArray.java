@@ -1,4 +1,4 @@
-package TreesandGraphs;
+package TreesAndGraphs;
 
 
 import java.util.ArrayList;
@@ -183,37 +183,6 @@ public class BinaryFromArray {
         return (subTree(t1.left, t2) || subTree(t1.right, t2));
     }
 
-    //See how many paths in tree equal the given sum
-    public static int numberOfSums(Node root, int sum) {
-        if (root == null) {
-            return 0;
-        }
-
-        HashMap<Integer, Integer> pathCount = new HashMap<>();
-
-        incrementHash(pathCount, 0, 1);
-        countPaths(root, sum, 0, pathCount);
-        int total = 0;
-
-
-
-        return total;
-    }
-
-    private static int countPaths(Node root, int targetSum, int runningSum, HashMap<Integer, Integer> pathCount) {
-        if (root == null) {
-            return 0;
-        }
-
-        runningSum += root.data;
-    }
-
-    private static void incrementHash(HashMap<Integer, Integer> hashMap, int key, int change) {
-        if (!hashMap.containsKey(key)) {
-            hashMap.put(key, 0);
-        }
-        hashMap.put(key, hashMap.get(key) + change);
-    }
 
     private static boolean matchTree(Node t1, Node t2) {
         if (t1 == null && t2 == null) { //Nothing left and all nodes have matched so far
@@ -226,6 +195,47 @@ public class BinaryFromArray {
             return (matchTree(t1.left, t2.left) && matchTree(t1.right, t2.right));
         }
     }
+
+    //See how many paths in tree equal the given sum
+
+    public static int countPathsWithSum(Node root, int targetSum) {
+        return countPathsWithSum(root, targetSum, 0, new HashMap<Integer, Integer>());
+    }
+
+    public static int countPathsWithSum(Node node, int targetSum, int runningSum, HashMap<Integer, Integer> pathCount) {
+        if (node == null) return 0; // Base case
+
+        runningSum += node.data;
+
+		/* Count paths with sum ending at the current node. */
+        int sum = runningSum - targetSum;
+        int totalPaths = pathCount.getOrDefault(sum, 0);
+
+		/* If runningSum equals targetSum, then one additional path starts at root. Add in this path.*/
+        if (runningSum == targetSum) {
+            totalPaths++;
+        }
+
+		/* Add runningSum to pathCounts. */
+        incrementHashTable(pathCount, runningSum, 1);
+
+		/* Count paths with sum on the left and right. */
+        totalPaths += countPathsWithSum(node.left, targetSum, runningSum, pathCount);
+        totalPaths += countPathsWithSum(node.right, targetSum, runningSum, pathCount);
+
+        incrementHashTable(pathCount, runningSum, -1); // Remove runningSum
+        return totalPaths;
+    }
+
+    public static void incrementHashTable(HashMap<Integer, Integer> hashTable, int key, int delta) {
+        int newCount = hashTable.getOrDefault(key, 0) + delta;
+        if (newCount == 0) { // Remove when zero to reduce space usage
+            hashTable.remove(key);
+        } else {
+            hashTable.put(key, newCount);
+        }
+    }
+
 
     public static void main (String args[]) {
         int[] sorted = new int[10];
