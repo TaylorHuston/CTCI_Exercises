@@ -1,7 +1,7 @@
-package TreesandGraphs;
+package TreesAndGraphs;
 
 
-import Chapter3.Queue;
+import StacksAndQueues.Queue;
 
 import java.util.ArrayList;
 
