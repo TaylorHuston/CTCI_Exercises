@@ -36,32 +36,33 @@ public class ArrayStack<T> {
     }
 
     public void push(int whichStack, T toPush) {
-        int i = whichStack-1;
+        int i = whichStack - 1;
         theStack[stackInfo[i].top++] = toPush;
         if (i == numStacks - 1 && stackInfo[i].top + 1 == theStack.length) {
             resize();
-        } else if (i < numStacks - 1 &&  stackInfo[i].top + 1 == stackInfo[i+1].start) {
+        } else if (i < numStacks - 1 && stackInfo[i].top + 1 == stackInfo[i + 1].start) {
             resize();
         }
     }
 
     public T pop(int whichStack) {
-        int i = whichStack-1;
+        int i = whichStack - 1;
         T toReturn = theStack[stackInfo[i].top];
         theStack[stackInfo[i].top--] = null;
         return toReturn;
     }
 
     private void resize() {
-        stackSize +=5;
+        stackSize += 5;
         int totalSize = stackSize * numStacks;
-        T[] newTheStack = (T[]) new Object[totalSize];;
+        T[] newTheStack = (T[]) new Object[totalSize];
+        ;
         StackInfo[] newStackInfo = new StackInfo[numStacks];
 
         for (int i = 0; i < numStacks; i++) {
             newStackInfo[i] = new StackInfo(i, stackSize);
             for (int j = stackInfo[i].start; j < stackInfo[i].top; j++) {
-                newTheStack[(i*5)+j] = theStack[j];
+                newTheStack[(i * 5) + j] = theStack[j];
                 newStackInfo[i].top++;
             }
         }

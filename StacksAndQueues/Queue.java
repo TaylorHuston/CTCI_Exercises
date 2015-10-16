@@ -26,6 +26,7 @@ public class Queue<T> {
             tail = t;
         }
     }
+
     public T dequeue() {
         if (head == null) {
             throw new NoSuchElementException();

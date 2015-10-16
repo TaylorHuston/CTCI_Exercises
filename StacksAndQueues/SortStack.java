@@ -5,9 +5,9 @@ public class SortStack {
 
     public static Stack<Integer> sort(Stack<Integer> toSort) {
         Stack<Integer> tempStack = new Stack<Integer>();
-        while(!toSort.isEmpty()) {
+        while (!toSort.isEmpty()) {
             int temp = toSort.pop();
-            while(!tempStack.isEmpty() && tempStack.peek() < temp) {
+            while (!tempStack.isEmpty() && tempStack.peek() < temp) {
                 toSort.push(tempStack.pop());
             }
             tempStack.push(temp);

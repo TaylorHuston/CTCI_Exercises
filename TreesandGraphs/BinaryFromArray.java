@@ -14,7 +14,7 @@ public class BinaryFromArray {
         public Node right;
 
         Node(int data) {
-           this.data = data;
+            this.data = data;
         }
 
         public static void inOrder(Node head) {
@@ -47,17 +47,17 @@ public class BinaryFromArray {
     }
 
     public static Node buildTree(int[] arr) {
-        return buildTree(arr, 0, arr.length-1);
+        return buildTree(arr, 0, arr.length - 1);
     }
 
     private static Node buildTree(int[] arr, int start, int end) {
         if (end < start) {
             return null;
         }
-        int mid  = (start+end)/2;
+        int mid = (start + end) / 2;
         Node head = new Node(arr[mid]);
-        head.left = buildTree(arr, start, mid-1);
-        head.right = buildTree(arr, mid+1, end);
+        head.left = buildTree(arr, start, mid - 1);
+        head.right = buildTree(arr, mid + 1, end);
         return head;
     }
 
@@ -84,11 +84,11 @@ public class BinaryFromArray {
             return -1;
         }
 
-        int heightDiff = leftHeight-rightHeight;
+        int heightDiff = leftHeight - rightHeight;
         if (Math.abs(heightDiff) > 1) {
             return -1;
         } else {
-            return Math.max(leftHeight, rightHeight) +1;
+            return Math.max(leftHeight, rightHeight) + 1;
         }
 
     }
@@ -142,7 +142,7 @@ public class BinaryFromArray {
     }
 
     public static void weaveLists(LinkedList<Integer> first, LinkedList<Integer> second, ArrayList<LinkedList<Integer>> results,
-        LinkedList<Integer> prefix) {
+                                  LinkedList<Integer> prefix) {
 
         if (first.size() == 0 || second.size() == 0) {
             LinkedList<Integer> result = (LinkedList<Integer>) prefix.clone();
@@ -189,7 +189,7 @@ public class BinaryFromArray {
             return true;
         } else if (t1 == null || t2 == null) { //Big tree empty, subtree not found
             return false;
-        } else if (t1.data !=  t2.data) { //Nodes don't match
+        } else if (t1.data != t2.data) { //Nodes don't match
             return false;
         } else {
             return (matchTree(t1.left, t2.left) && matchTree(t1.right, t2.right));
@@ -237,7 +237,7 @@ public class BinaryFromArray {
     }
 
 
-    public static void main (String args[]) {
+    public static void main(String args[]) {
         int[] sorted = new int[10];
         for (int i = 0; i < 10; i++) {
             sorted[i] = i;

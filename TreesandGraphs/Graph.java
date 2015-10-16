@@ -30,7 +30,7 @@ public class Graph {
         toVisit.enqueue(v);
 
         while (toVisit.isEmpty() != true) {
-            Integer check  = toVisit.dequeue();
+            Integer check = toVisit.dequeue();
             visited[v] = true;
             for (Integer i : nodes[check]) {
                 if (i == y) {
@@ -53,20 +53,20 @@ public class Graph {
 
     private void DFS(int v, boolean[] visited) {
         visited[v] = true;
-        for (Integer x: nodes[v]) {
+        for (Integer x : nodes[v]) {
             if (visited[x] == false) {
                 DFS(x, visited);
             }
         }
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Graph G = new Graph(10);
         G.addEdge(1, 2);
-        G.addEdge(2 ,3);
-        G.addEdge(2 ,4);
-        G.addEdge(2 ,5);
-        G.addEdge(0 ,9);
+        G.addEdge(2, 3);
+        G.addEdge(2, 4);
+        G.addEdge(2, 5);
+        G.addEdge(0, 9);
 
         System.out.println(G.hasPathToBFS(1, 3));
         System.out.println(G.hasPathToBFS(1, 5));
