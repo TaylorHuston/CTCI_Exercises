@@ -1,4 +1,4 @@
-package Chapter1;
+package StringsAndArrays;
 
 /*Various array related functions, from Chapter 1*/
 public class ArrayStuff {

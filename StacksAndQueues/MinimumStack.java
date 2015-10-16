@@ -1,4 +1,4 @@
-package Chapter3;
+package StacksAndQueues;
 
 /*Stack with an additional min() method that returns the minimum value in O(1)*/
 public class MinimumStack extends Stack {

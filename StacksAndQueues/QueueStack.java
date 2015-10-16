@@ -1,4 +1,4 @@
-package Chapter3;
+package StacksAndQueues;
 
 /* A queue built from two stacks*/
 public class QueueStack<T> {

@@ -1,4 +1,4 @@
-package Chapter3;
+package StacksAndQueues;
 
 /*Create a stack where the smallest item is always on top*/
 public class SortStack {

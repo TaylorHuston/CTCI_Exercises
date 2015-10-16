@@ -1,4 +1,4 @@
-package Chapter3;
+package StacksAndQueues;
 
 /*Multiple stacks implemented in one array, from Chapter 3*/
 public class ArrayStack<T> {
