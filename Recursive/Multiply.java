@@ -20,7 +20,7 @@ public class Multiply {
     }
 
     public static void main(String[] args) {
-        System.out.println(Multiply.multiply(5,3));
-        System.out.println(Multiply.multiply(10,19));
+        System.out.println(Multiply.multiply(5, 3));
+        System.out.println(Multiply.multiply(10, 19));
     }
 }

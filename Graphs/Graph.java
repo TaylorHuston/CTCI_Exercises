@@ -1,4 +1,4 @@
-package TreesAndGraphs;
+package Graphs;
 
 
 import StacksAndQueues.Queue;
