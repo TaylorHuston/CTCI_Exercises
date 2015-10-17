@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Stack;
 
-/*Various LL functions, from Chapter 2*/
+/*Basic Single Linked List implementation*/
 public class LinkedList {
 
     public static class Node {
