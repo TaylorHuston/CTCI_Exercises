@@ -2,7 +2,7 @@ package Trees;
 
 /*Find the height of a binary tree*/
 public class HeightOfTree {
-    public static int height(BinaryFromArray.Node head) {
+    public static int height(TreeNode head) {
         if (head == null) {
             return 0;
         } else {
