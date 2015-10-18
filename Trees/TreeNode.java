@@ -12,6 +12,10 @@ public class TreeNode {
         this.data = data;
     }
 
+    TreeNode() {
+        this(0);
+    }
+
     public static void inOrder(TreeNode head) {
         if (head == null) {
             return;
